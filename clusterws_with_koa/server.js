@@ -15,7 +15,7 @@ function Worker() {
   const app = new Koa();
   app.use(serve(__dirname + '/public'));
 
-  // Connect ClusterWS and your library/framework make sure that u call calback for Koa
+  // Connect ClusterWS and Koa (note that we need to call callback function)
   server.on('request', app.callback());
 
   wss.on('connection', (socket) => {

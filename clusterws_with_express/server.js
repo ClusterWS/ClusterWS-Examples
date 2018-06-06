@@ -14,7 +14,7 @@ function Worker() {
   const app = express();
   app.use(express.static('public'));
 
-  // Connect ClusterWS and your library/framework
+  // Connect ClusterWS and Express
   server.on('request', app);
 
   wss.on('connection', (socket) => {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Express App Example</title>
+</head>
+
+<body>
+  <h1>Express App Example</h1>
+
+  <script src="./clusterws.min.js"></script>
+  <script>
+    let socket = new ClusterWS({
+      url: 'ws://localhost:3000'
+    });
+
+    socket.on('connect', () => {
+      console.log('Socket connected');
+    })
+
+    /* 
+      This is the way how we listen on events (the same way we use on backend to listen)
+
+      socket.on(nameOfEvent, callbackFunction)
+    **/
+    socket.on('greet', (message) => {
+      console.log(message)
+
+      // Send message back to the backend (you can send any type of data you would like)
+      socket.send('greetBack', 'Hy backend i am fine how about you')
+    })
+  </script>
+</body>
+
+</html>
