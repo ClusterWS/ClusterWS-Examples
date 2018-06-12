@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Express App Example</title>
+</head>
+
+<body>
+  <h1>Express App Example</h1>
+
+  <script src="./clusterws.min.js"></script>
+  <script>
+    let socket = new ClusterWS({
+      url: 'ws://localhost:3000'
+    });
+
+    socket.on('connect', () => {
+      console.log('Socket connected');
+
+      socket.subscribe('Hello World').publish('I am publishing this data')
+    })
+  </script>
+</body>
+
+</html>
