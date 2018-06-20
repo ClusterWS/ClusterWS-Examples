@@ -16,6 +16,7 @@ function Worker() {
 
   server.on('request', app);
 
+  // Check https://github.com/ClusterWS/ClusterWS/wiki/Handle-Sockets for more info
   // Most of websocket messaging code will go in this block
   wss.on('connection', (socket) => {
     console.log('New socket is connected');

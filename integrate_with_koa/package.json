@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "clusterws": "^3.0.6",
+    "clusterws": "^3.1.0",
     "koa": "^2.5.1",
     "koa-static": "^4.0.3"
   }
